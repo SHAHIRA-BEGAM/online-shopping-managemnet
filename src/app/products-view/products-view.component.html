@@ -33,20 +33,20 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="d-flex col-12">
-        <img src="../assets/h1.jpeg" class="d-block col-12 col-md-6" style="height: 400px;" alt="...">
-        <img src="../assets/h2.jpg" class="d-block col-md-6" style="height: 400px;" alt="...">
+        <img src="../assets/header1.jpg" class="d-block col-12 col-md-6" style="height: 400px;" alt="...">
+        <img src="../assets/header2.jpg" class="d-block col-md-6" style="height: 400px;" alt="...">
       </div>
     </div>
     <div class="carousel-item">
       <div class="d-flex col-12">
-        <img src="../assets/h4.jpeg" class="d-block col-12 col-md-6" style="height: 400px;" alt="...">
-        <img src="../assets/h5.jpeg" class="d-block col-md-6" style="height: 400px;" alt="...">
+        <img src="../assets/header3.jpeg" class="d-block col-12 col-md-6" style="height: 400px;" alt="...">
+        <img src="../assets/header4.jpg" class="d-block col-md-6" style="height: 400px;" alt="...">
       </div>
     </div>
     <div class="carousel-item">
       <div class="d-flex col-12">
-        <img src="../assets/h7.jpeg" class="d-block col-12 col-md-6" style="height: 400px;" alt="...">
-        <img src="../assets/h9.jpg" class="d-block col-md-6" style="height: 400px;" alt="...">
+        <img src="../assets/header5.jpeg" class="d-block col-12 col-md-6" style="height: 400px;" alt="...">
+        <img src="../assets/header6.jpeg" class="d-block col-md-6" style="height: 400px;" alt="...">
       </div>
     </div>
   </div>
@@ -59,11 +59,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div class="container mt-4">
+<div class="container-fluid mt-4">
   <ng-container *ngIf="!selectedProduct; else singleProduct">
     <ng-container *ngIf="products && products.length > 0;else noProduct">
       <div class="row card-group mb-4">
-        <div class="col-12 col-md-4 position-relative p-0 cursor-pointer" *ngFor="let product of products">
+        <div class="col-12 col-md-3 mb-4 position-relative p-0 cursor-pointer" *ngFor="let product of products">
           <div class="hidden-card position-absolute d-flex flex-column w-100 px-4" style="height: 400px;">
             <div [style.background-image]="'url(' + product.image + ')'" class="product-bg h-100"
               (click)="viewDetails(product.id)">
