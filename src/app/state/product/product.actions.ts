@@ -26,13 +26,6 @@ export const loadProductSucceed =
   createAction('[Product] Load Product for Id Succeed', props<{ product: Product }>());
 export const loadProductFailed = createAction('[Product] Load Product for Id Failed', props<{ error: ApiError }>());
 
-// export const clearProductCache = createAction('[Product] Clear Product Cache');
-// export const unselectProduct = createAction('[Product] Unselect Product');
-
-// export const addProduct = createAction('[Product] Add Product', props<{ system: Partial<Product> }>());
-// export const addProductucceed = createAction('[Product] Add Product succeed', props<{ system: Product }>());
-// export const addProductFailed = createAction('[Product] Add Product failed', props<{ error: ApiError }>());
-
 export const updateProduct = createAction('[Product] Update Product', props<{ product: Partial<Product> }>());
 export const updateProductSucceed =
     createAction('[Product] Update Product Succeed', props<{ product: Update<Product> }>());
@@ -42,20 +35,3 @@ export const updateProductFailed =
 export const deleteProduct = createAction('[Product] Delete Product', props<{ id: number }>());
 export const deleteProductSucceed = createAction('[Product] Delete Product Succeed', props<{ id: number }>());
 export const deleteProductFailed = createAction('[Product] Delete Product Failed', props<{ error: ApiError }>());
-
-// export const loadProduct = createAction('[Product] Load Product for Id', props<{ id: string }>());
-// export const loadProductucceed =
-//     createAction('[Product] Load Product for Id Succeed', props<{ system: Product }>());
-// export const loadProductFailed = createAction('[Product] Load Product for Id Failed', props<{ error: ApiError }>());
-
-// export const updateSelectedProduct = createAction('[Product] Update the details of selected Product System',
-//   props<{ id: string }>());
-// export const updateSelectedProductucceed =
-//     createAction('[Product] Update the details of selected Product System Succeed', props<{ system: Product }>());
-// export const updateSelectedProductFailed = createAction('[Product] Update the details of selected Product System Failed',
-//   props<{ error: ApiError }>());
-
-// export const uploadProduct = createAction('[Product] upload Product',
-//   props<{ id: string; settings: UploadSettings }>());
-// export const uploadProductucceed = createAction('[Product] upload Product Succeed');
-// export const uploadProductFailed = createAction('[Product] upload Product Failed', props<{ error: ApiError }>());

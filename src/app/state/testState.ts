@@ -1,57 +1,26 @@
-import { ViewMode } from '@simpl/sishell-element';
-import { ConnectionState } from '../shared/models/external-system';
-import { AppState } from './app/app.reducer';
-import { ExternalSystemState } from './externalSystem/external-system.store';
-import { SystemTypesState } from './systemType/systemType.store';
+import { ProductState } from './product/product.store';
 
 export const initialState: {
-  app: AppState;
-  externalsystem: ExternalSystemState;
-  systemtype: SystemTypesState;
+  product: ProductState;
 } = {
-  app: {
-    viewMode: ViewMode.View
-  },
-  externalsystem: {
-    pageCache: {},
-    pagedIds: [],
-    pageInfo: { pageNumber: 0, size: 20, totalElements: 20, totalPages: 1 },
-    isLoading: true,
-    inOperation: false,
-    searchTerm: '',
+  product: {
     ids: [1, 2],
     entities: {
       1: {
-        id: '1',
-        name: 'system1',
-        connectionState: ConnectionState.INITIAL
+        id: 1,
+        title: 'Mens Casual Slim Fit',
+        price: 9,
+        category: 'men clothing',
+        description: 'The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description',
+        image: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg'
       },
       2: {
-        id: '2',
-        name: 'system2',
-        connectionState: ConnectionState.INITIAL
-      }
-    },
-    selectedExternalSystem: {
-      id: '1',
-      name: 'test',
-      connectionState: ConnectionState.INITIAL,
-      type: 'SiPass'
-    }
-  },
-  systemtype: {
-    ids: [1, 2],
-    isLoading: false,
-    entities: {
-      'SiPass': {
-        id: '1',
-        name: 'SiPass',
-        description: 'SiPass supports ExportIdentities'
-      },
-      'SIPORT': {
-        id: '1',
-        name: 'SIPORT',
-        description: 'SIPORT supports ExportIdentities,ImportPrivileges'
+        id: 2,
+        title: 'White Gold Plated Princess',
+        price: 10.99,
+        category: 'jewelery',
+        description: 'Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel',
+        image: 'https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg'
       }
     }
   }

@@ -7,7 +7,7 @@ export interface ProductState extends EntityState<Product> {
   selectedProduct?: Product;
   categories?: Array<string>;
   error?: ApiError;
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 export const productsAdapter: EntityAdapter<Product> = createEntityAdapter<Product>();

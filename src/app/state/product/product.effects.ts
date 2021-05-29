@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Update } from '@ngrx/entity';
 import { of } from 'rxjs';
-import { catchError, concatMap, map, switchMap } from 'rxjs/operators';
+
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { ProductService } from 'src/app/services/product.service';
 import {
   deleteProduct,
@@ -14,7 +15,16 @@ import {
   loadCategoriesSucceed,
   loadProduct,
   loadProductFailed,
-  loadProducts, loadProductsByCategory, loadProductsByCategoryFailed, loadProductsByCategorySucceed, loadProductsFailed, loadProductsSucceed, loadProductSucceed, updateProduct, updateProductFailed, updateProductSucceed
+  loadProducts,
+  loadProductsByCategory,
+  loadProductsByCategoryFailed,
+  loadProductsByCategorySucceed,
+  loadProductsFailed,
+  loadProductsSucceed,
+  loadProductSucceed,
+  updateProduct,
+  updateProductFailed,
+  updateProductSucceed
 } from './product.actions';
 
 @Injectable()
@@ -29,7 +39,6 @@ export class ProductEffects {
       })))
     ))
   ));
-
 
   loadCategories$ = createEffect(() => this.productActions$.pipe(
     ofType(loadCategories),
@@ -81,19 +90,8 @@ export class ProductEffects {
     ))
   ));
 
-
   constructor(
     private productActions$: Actions,
     private productService: ProductService) {
   }
-
-  // reloadCurrentPage(): void {
-  //   const pageRequest: PageRequest = {
-  //     pageNumber: this.currentPage?.pageNumber || 0,
-  //     pageSize: this.currentPage?.size || 40,
-  //     search: this.currentSearch,
-  //     filter: this.currentFilter
-  //   };
-  //   this.store.dispatch(loadProduct({ pageRequest }));
-  // }
 }

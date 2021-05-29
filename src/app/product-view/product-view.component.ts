@@ -15,6 +15,7 @@ export class ProductViewComponent implements OnInit {
   @Input() product: Product;
   productForm: FormGroup;
   viewMode: ViewMode = ViewMode.View;
+  imageUrl: string;
 
 
   get isAddMode(): boolean {
@@ -97,5 +98,13 @@ export class ProductViewComponent implements OnInit {
 
   public onCancel() {
     this.viewMode = ViewMode.View;
+  }
+
+  onFileSelected(file: FileList) {
+    const reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imageUrl = event?.target?.result;
+    }
+    reader.readAsDataURL(file.item(0));
   }
 }

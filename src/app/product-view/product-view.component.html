@@ -6,7 +6,7 @@
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="!readonly">
       <button class="btn btn-primary me-md-2 px-5 text-capitalize" type="button" (click)="onSave()">Save</button>
-      <button class="btn btn-primary text-capitalize" type="button px-5" (click)="onCancel()">Cancel</button>
+      <button class="btn btn-primary text-capitalize px-5" type="button" (click)="onCancel()">Cancel</button>
     </div>
   </div>
 </div>
@@ -18,8 +18,7 @@
         <div class="col-7">
           <div class="mb-3">
             <label for="category" class="form-label">category</label>
-            <input type="text" class="form-control" formControlName="category" id="category"
-              [readonly]="readonly">
+            <input type="text" class="form-control" formControlName="category" id="category" [readonly]="readonly">
           </div>
           <div class="mb-3">
             <label for="title" class="form-label">title</label>
@@ -38,8 +37,9 @@
         </div>
         <div class="col-5 d-flex flex-column align-items-center">
           <label for="image" class="form-label">Product Image</label>
-          <input type="image" [src]="product.image" class="form-control w-75 h-75" formControlName="image" id="image"
-            [readonly]="readonly">
+          <img [src]="this.imageUrl || product.image" class="w-75 h-75" (change)="onFileSelected($event.target.files)">
+          <input style="display: none" type="file" (change)="onFileSelected($event.target.files)" #fileInput>
+          <button *ngIf=!readonly class="btn btn-primary px-5 text-capitalize mt-4"(click)="fileInput.click()">Change Image</button>
         </div>
       </div>
     </form>

@@ -41,11 +41,9 @@ export class ProductsViewComponent implements OnDestroy {
   searchProducts(event: string) {
     this.products = this.productsCopy;
     this.products = this.products.filter(product => product.title?.toLocaleLowerCase().trim().includes(event.toLocaleLowerCase().trim()));
-    console.log(this.products);
   }
 
   filterByCategory(category: string) {
-    console.log(category);
     if (category !== 'All Categories') {
       this.store.dispatch(loadProductsByCategory({ category }));
     } else {
@@ -56,11 +54,7 @@ export class ProductsViewComponent implements OnDestroy {
   viewDetails(id: number) {
     const queryParams: Params = { id };
     this.router.navigate([], { queryParams, queryParamsHandling: 'merge' });
-    // this.singleProductView = true;
     this.store.dispatch(loadProduct({ id }));
-    // this.productService.getProductById(productId).subscribe(product => {
-    //   this.product = product;
-    // });
   }
 
 
@@ -70,17 +64,3 @@ export class ProductsViewComponent implements OnDestroy {
     });
   }
 }
-
-// updateSearchParams(theSearch: string): void {
-//   if (theSearch !== '') {
-//     const queryParams: Params = { searchTerm: theSearch };
-//     this.router.navigate(
-//       [],
-//       {
-//         queryParams,
-//         queryParamsHandling: 'merge'
-//       });
-//   } else {
-//     this.clearSearchParams();
-//   }
-// }
