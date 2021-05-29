@@ -1,0 +1,14 @@
+
+.card-body {
+  background-color: #303b4d;
+
+  .form-control[readonly] {
+    border: 0;
+    background-color: white;
+  }
+}
+
+button, button:hover {
+  background: #303b4d;
+}
+

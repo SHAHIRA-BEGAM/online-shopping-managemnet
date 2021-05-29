@@ -1,0 +1,47 @@
+<div class="row mb-2">
+  <div class="col-12">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="readonly">
+      <button class="btn btn-primary me-md-2 px-5 text-capitalize" type="button" (click)="onEdit()">Edit</button>
+      <button class="btn btn-primary px-5 text-capitalize" type="button" (click)="onDelete()">Delete</button>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="!readonly">
+      <button class="btn btn-primary me-md-2 px-5 text-capitalize" type="button" (click)="onSave()">Save</button>
+      <button class="btn btn-primary text-capitalize" type="button px-5" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>
+<div class="card mb-5">
+  <div class="card-body text-white mb-5">
+    <h5 class="card-title text-center mb-4 mt-3">{{product.title}}</h5>
+    <form [formGroup]="productForm" class="product-form p-5 bg-white">
+      <div class="row">
+        <div class="col-7">
+          <div class="mb-3">
+            <label for="category" class="form-label">category</label>
+            <input type="text" class="form-control" formControlName="category" id="category"
+              [readonly]="readonly">
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input type="text" class="form-control" formControlName="title" id="title" [readonly]="readonly">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">price</label>
+            <input type="text" class="form-control" formControlName="price" id="price" [readonly]="readonly">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea type="text" class="form-control" rows="7" formControlName="description" id="description"
+              [readonly]="readonly">
+            </textarea>
+          </div>
+        </div>
+        <div class="col-5 d-flex flex-column align-items-center">
+          <label for="image" class="form-label">Product Image</label>
+          <input type="image" [src]="product.image" class="form-control w-75 h-75" formControlName="image" id="image"
+            [readonly]="readonly">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
