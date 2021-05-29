@@ -1,4 +1,21 @@
-# Angularwithdb
+# Online shopping management
+
+Online shopping management project is designed for shop admin to view, add, update and delete the product. And this project was implemented using Angular 10, NgRx, Bootstrap5, Html and Scss.
+
+# Screenshots
+
+## View all products
+
+![view-all-products](https://user-images.githubusercontent.com/69795395/120072848-59034e80-c0b3-11eb-8297-1d2a2fb4dc58.jpg)
+
+## Click product to view
+
+![click-view](https://user-images.githubusercontent.com/69795395/120072853-5acd1200-c0b3-11eb-8275-6e511c15024a.jpg)
+
+## Update and delete teh product
+
+![update-product](https://user-images.githubusercontent.com/69795395/120072845-57398b00-c0b3-11eb-94b3-8fd36ef1512c.JPG)
+# Online shopping management
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
