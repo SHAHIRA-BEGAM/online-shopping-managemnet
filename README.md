@@ -1,6 +1,6 @@
 # Online shopping management
 
-Online shopping management project is designed for shop admin to view, add, update and delete the product. And this project was implemented using Angular 10, NgRx, Bootstrap5, Html and Scss.
+It is designed for a shop owner who can maintain his/her product by adding, deleting, and updating the product details for selling it online. And this project was implemented using Angular 10, NgRx, Bootstrap5, Html and Scss.
 
 # Screenshots
 
